@@ -1,5 +1,13 @@
-from django.shortcuts import render
+from django.http import HttpResponse
+from django.template import loader
+from .models import Section
 
 
 def home(request):
-    return render(request, 'home/index.html', {})
+    sec = Section.objects.order_by('published_date')[:3]
+    template = loader.get_template('home/index.html')
+    output = ', '.join([q.title for q in sec])
+    context = {
+        'Section': sec,
+    }
+    return HttpResponse(template.render(context, request))
