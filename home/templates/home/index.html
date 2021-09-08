@@ -12,7 +12,7 @@
            <!-- <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image:url(&quot;{% static 'home/img/bg-showcase-1.jpg' %}&quot;);"><span></span></div> -->
             <div class="showcase-text">
                 <h2>{{ con.title }}</h2>
-                <p class="lead mb-0">{{ con.text }}</p>
+                {{ con.text|safe }}
             </div>
         {% endfor %}
         </div>

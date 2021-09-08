@@ -1,13 +1,11 @@
 from django.contrib import admin
-from django import forms
 from .models import Section, Content
-from ckeditor.widgets import CKEditorWidget
-from ckeditor_uploader.widgets import CKEditorUploadingWidget
+
 '''
 # <--- Ursprünglich -->
-
-admin.site.register(Content)
-'''
+from django import forms
+from ckeditor.widgets import CKEditorWidget
+from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
 
 class ContentAdminForm(forms.ModelForm):
@@ -21,6 +19,6 @@ class ContentAdminForm(forms.ModelForm):
 class ContentAdmin(admin.ModelAdmin):
     form = ContentAdminForm
 
-
-admin.site.register(Content, ContentAdmin)
+'''
+admin.site.register(Content)
 admin.site.register(Section)
