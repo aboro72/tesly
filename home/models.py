@@ -29,7 +29,7 @@ class Content(models.Model):
     '''
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=160, help_text='Hier eine Überschrift')
-    text = RichTextUploadingField(help_text='<p class="lead mb-0"></p> einfügen im Textbereich')
+    text = RichTextUploadingField(help_text='p class="lead mb-0"  einfügen im Textbereich')
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
 
